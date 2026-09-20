@@ -17,6 +17,7 @@ import com.homebudget.expenses.data.Transaction
 import com.homebudget.expenses.data.TransactionType
 import java.text.SimpleDateFormat
 import java.util.*
+import androidx.compose.material3.ExperimentalMaterial3Api
 
 @Composable
 fun DashboardScreen(viewModel: DashboardViewModel) {
@@ -117,7 +118,7 @@ fun TransactionItem(transaction: Transaction, onDelete: () -> Unit) {
         }
     }
 }
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddTransactionDialog(type: TransactionType, onDismiss: () -> Unit, onAdd: (Double, String, String, Long) -> Unit) {
     var amount by remember { mutableStateOf("") }
